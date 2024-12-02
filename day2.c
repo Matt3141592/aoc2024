@@ -82,6 +82,7 @@ void part1(void)
 
         ans += increasing(nums, count);
         ans += decreasing(nums, count);
+        free(nums);
     }
 
     printf("%i\n", ans);
@@ -114,7 +115,6 @@ void part2(void)
             }
             free(removed);
         }
-
         free(nums);
     }
 
