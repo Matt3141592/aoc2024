@@ -84,7 +84,6 @@ void part1(void)
         ans += decreasing(nums, count);
         free(nums);
     }
-
     printf("%i\n", ans);
     fclose(in);
 }
@@ -117,7 +116,6 @@ void part2(void)
         }
         free(nums);
     }
-
     printf("%i\n", ans);
     fclose(in);
 }
