@@ -127,4 +127,3 @@ int main(void)
     part2();
     printf("%f\n", (float)(clock() - begin) / CLOCKS_PER_SEC);
 }
-
