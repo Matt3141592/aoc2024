@@ -67,7 +67,7 @@ void merge(int list[], int start, int end)
 
 void part1(void)
 {
-    FILE *in = fopen("day1.txt", "r");
+    FILE *in = fopen("inputs/day1.txt", "r");
 
     int x[1000];
     int y[1000];
@@ -96,7 +96,7 @@ void part1(void)
 
 void part2(void)
 {
-    FILE *in = fopen("day1.txt", "r");
+    FILE *in = fopen("inputs/day1.txt", "r");
 
     int x[1000];
     int y[1000];

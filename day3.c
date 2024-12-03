@@ -34,12 +34,10 @@ int finder(char *str)
 {
     int ans = 0;
     while (*str)
-    {
         if (*str++ == 'm')
             if (*str++ == 'u')
                 if (*str++ == 'l')
                     ans += mul(str);
-    }
     return ans;
 }
 
@@ -86,7 +84,7 @@ int enabled_finder(char *str)
 
 void part1(void)
 {
-    FILE *in = fopen("day3.txt", "r");
+    FILE *in = fopen("inputs/day3.txt", "r");
 
     char buffer[3500];
     int ans = 0;
@@ -102,7 +100,7 @@ void part1(void)
 
 void part2(void)
 {
-    FILE *in = fopen("day3.txt", "r");
+    FILE *in = fopen("inputs/day3.txt", "r");
 
     char buffer[3500];
     int ans = 0;
