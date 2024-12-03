@@ -91,7 +91,6 @@ void part1(void)
         ans += abs(x[i] - y[i]);
     
     printf("%i\n", ans);
-
     fclose(in);
 }
 
@@ -133,7 +132,6 @@ void part2(void)
     }
 
     printf("%i\n", ans);
-
     fclose(in);
 }
 
