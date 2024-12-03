@@ -74,10 +74,15 @@ int enabled_finder(char *str)
     while (*str)
     {
         enabled(str, &enable);
-        if (*str++ == 'm')
-            if (*str++ == 'u')
-                if (*str++ == 'l')
-                    ans += enable * mul(str);
+        if (enable)
+        {
+            if (*str++ == 'm')
+                if (*str++ == 'u')
+                    if (*str++ == 'l')
+                        ans += mul(str);
+        }
+        else
+            str++;
     }
     return ans;
 }
