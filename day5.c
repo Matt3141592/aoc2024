@@ -81,7 +81,28 @@ int valid(int *pages, int len)
             if (!in(pages[i], pages[j]))
                 return 0;
     return 1;
+}
 
+
+int fix(int *pages, int len)
+{
+    int order[len];
+
+    for (int i = 0; i < len; i++)
+    {
+        int count = 0;
+        for (int j = 0; j < len; j++)
+            count += in(pages[i], pages[j]);
+        order[i] = count;
+    }
+
+    int mid = len >> 1;
+    int middle = 0;
+    for (int i = 0; i < len; i++)
+        if (mid == order[i])
+            middle = i;
+
+    return pages[middle];
 }
 
 void part1(void)
@@ -115,14 +136,42 @@ void part1(void)
 void part2(void)
 {
     FILE *in = fopen("inputs/day5.txt", "r");
+    char buffer[100];
+    int ans = 0;
 
+    for (int i = 0; i < 1176; i++)
+    {
+        fgets(buffer, 100, in);
+        parse(buffer);
+    }
+
+    fgets(buffer, 50, in);
+
+    while (fgets(buffer, 100, in))
+    {
+        int len = length(buffer);
+        int pages[len];
+        update(buffer, pages, len);
+        if (!valid(pages, len))
+            ans += fix(pages, len);
+    }
+
+    printf("%i\n", ans);
+    freeTable();
     fclose(in);
+}
+
+void initialise()
+{
+    for (int i = 0; i < 100; i++)
+        table[i] = NULL;
 }
 
 int main(void)
 {   
     clock_t begin = clock();
     part1();
+    initialise();
     part2();
     printf("%f\n", (float)(clock() - begin) / CLOCKS_PER_SEC);
 }
