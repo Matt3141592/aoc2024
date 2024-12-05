@@ -86,23 +86,18 @@ int valid(int *pages, int len)
 
 int fix(int *pages, int len)
 {
-    int order[len];
+    int mid = len >> 1;
+    int middle = 0;
 
     for (int i = 0; i < len; i++)
     {
         int count = 0;
         for (int j = 0; j < len; j++)
             count += in(pages[i], pages[j]);
-        order[i] = count;
+        if (count == mid)
+            return pages[i];
     }
-
-    int mid = len >> 1;
-    int middle = 0;
-    for (int i = 0; i < len; i++)
-        if (mid == order[i])
-            middle = i;
-
-    return pages[middle];
+    return 0;
 }
 
 void part1(void)
@@ -175,4 +170,3 @@ int main(void)
     part2();
     printf("%f\n", (float)(clock() - begin) / CLOCKS_PER_SEC);
 }
-
