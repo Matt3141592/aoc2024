@@ -37,7 +37,10 @@ void freeList(node *list)
 void freeTable(void)
 {
     for (int i = 0; i < 100; i++)
+    {
         freeList(table[i]);
+        table[i] = NULL;
+    }
 }
 
 int length(char *str)
@@ -156,17 +159,10 @@ void part2(void)
     fclose(in);
 }
 
-void initialise()
-{
-    for (int i = 0; i < 100; i++)
-        table[i] = NULL;
-}
-
 int main(void)
 {   
     clock_t begin = clock();
     part1();
-    initialise();
     part2();
     printf("%f\n", (float)(clock() - begin) / CLOCKS_PER_SEC);
 }
