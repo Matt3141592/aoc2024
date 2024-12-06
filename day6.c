@@ -50,7 +50,7 @@ void part1(void)
     int ans = 1;
 
     parse(grid, in, &x, &y);
-    while (x >= 0 && x <= 130 && y >= 0 && y <= 130)
+    while (x >= 0 && x < 130 && y >= 0 && y < 130)
     {    
         while (wall(x + right - left, y - up + down, grid))
         {
