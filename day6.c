@@ -25,7 +25,7 @@ int addRow(char *row, char *str, int *x)
     return found;
 }
 
-void parse(char grid[][132], FILE *in, int *x, int *y)
+void parse(char grid[130][132], FILE *in, int *x, int *y)
 {
     char buffer[132];
     int i = 0;
@@ -34,7 +34,7 @@ void parse(char grid[][132], FILE *in, int *x, int *y)
             *y = i;
 }
 
-int wall(int x, int y, char grid[][132])
+int wall(int x, int y, char grid[130][132])
 {
     if (grid[y][x] == '#')
         return 1;
