@@ -45,8 +45,8 @@ void part1(void)
 {
     FILE *in = fopen("inputs/day6.txt", "r");
     char grid[130][132];
-    for (int i = 128; i < 130; i++)
-        for (int j = 128; j < 132; j++)
+    for (int i = 0; i < 130; i++)
+        for (int j = 0; j < 132; j++)
             grid[i][j] = 0;
 
     int x = 0, y = 0;
