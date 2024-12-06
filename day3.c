@@ -93,12 +93,9 @@ void part1(void)
 
     char buffer[3500];
     int ans = 0;
-    for (int i = 0; i < 6; i++)
-    {
-        fgets(buffer, 3500, in);
+
+    while (fgets(buffer, 3500, in))
         ans += finder(buffer);
-    }
-    
     printf("%i\n", ans);
     fclose(in);
 }
@@ -109,14 +106,10 @@ void part2(void)
 
     char buffer[3500];
     int ans = 0;
-    for (int i = 0; i < 6; i++)
-    {
-        fgets(buffer, 3500, in);
-        ans += enabled_finder(buffer);
-    }
-    
-    printf("%i\n", ans);
 
+    while (fgets(buffer, 3500, in))
+        ans += enabled_finder(buffer);
+    printf("%i\n", ans);
     fclose(in);
 }
 

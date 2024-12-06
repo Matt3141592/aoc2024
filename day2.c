@@ -73,10 +73,8 @@ void part1(void)
     char buffer[50];
     int ans = 0;
 
-    for (int i = 0; i < 1000; i++)
+    while (fgets(buffer, 50, in))
     {
-        fgets(buffer, 50, in);
-        
         int count = 1;
         int *nums = toArray(buffer, &count);
 
@@ -95,10 +93,8 @@ void part2(void)
     char buffer[50];
     int ans = 0;
 
-    for (int i = 0; i < 1000; i++)
+    while (fgets(buffer, 50, in))
     {
-        fgets(buffer, 50, in);
-
         int count = 1;
         int *nums = toArray(buffer, &count);
 

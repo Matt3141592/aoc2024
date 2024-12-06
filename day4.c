@@ -50,12 +50,9 @@ void part1(void)
     char buffer[142];
     int ans = 0;
 
-    for (int i = 0; i < 140; i++)
-    {
-        fgets(buffer, 142, in);
-        strcpy(grid[i], buffer);
-        // printf("%s", grid[i]);
-    }
+    int a = 0;
+    while (fgets(buffer, 142, in))
+        strcpy(grid[a++], buffer);
 
     char str[4];
     for (int i = 0; i < 140; i++)
@@ -108,12 +105,9 @@ void part2(void)
     char buffer[142];
     int ans = 0;
 
-    for (int i = 0; i < 140; i++)
-    {
-        fgets(buffer, 142, in);
-        strcpy(grid[i], buffer);
-        // printf("%s", grid[i]);
-    }
+    int a = 0;
+    while (fgets(buffer, 142, in))
+        strcpy(grid[a++], buffer);
 
     char str1[3];
     char str2[3];
