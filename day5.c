@@ -53,11 +53,9 @@ int length(char *str)
 
 void update(char *str, int *pages, int len)
 {
-    for (int i = 0 ; i < len; i++)
-        pages[i] = 0;
-
     for (int i = 0; i < len; i++)
     {
+        pages[i] = 0;
         pages[i] += (*str++ - '0') * 10;
         pages[i] += (*str++ - '0');
         str++;
@@ -86,7 +84,6 @@ int valid(int *pages, int len)
     return 1;
 }
 
-
 int fix(int *pages, int len)
 {
     int mid = len >> 1;
@@ -114,8 +111,7 @@ void part1(void)
         fgets(buffer, 100, in);
         parse(buffer);
     }
-
-    fgets(buffer, 50, in);
+    fgets(buffer, 2, in);
 
     while (fgets(buffer, 100, in))
     {
@@ -142,8 +138,7 @@ void part2(void)
         fgets(buffer, 100, in);
         parse(buffer);
     }
-
-    fgets(buffer, 50, in);
+    fgets(buffer, 2, in);
 
     while (fgets(buffer, 100, in))
     {
