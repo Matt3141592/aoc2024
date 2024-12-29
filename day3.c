@@ -89,7 +89,7 @@ int enabled_finder(char *str)
 
 void part1(void)
 {
-    FILE *in = fopen("inputs/day3.txt", "r");
+    FILE *in = fopen("inputs/24/day3.txt", "r");
 
     char buffer[3500];
     int ans = 0;
@@ -102,7 +102,7 @@ void part1(void)
 
 void part2(void)
 {
-    FILE *in = fopen("inputs/day3.txt", "r");
+    FILE *in = fopen("inputs/24/day3.txt", "r");
 
     char buffer[3500];
     int ans = 0;

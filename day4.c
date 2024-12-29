@@ -44,7 +44,7 @@ int sam(char *str)
 
 void part1(void)
 {
-    FILE *in = fopen("inputs/day4.txt", "r");
+    FILE *in = fopen("inputs/24/day4.txt", "r");
 
     char grid[140][142];
     char buffer[142];
@@ -99,7 +99,7 @@ void part1(void)
 
 void part2(void)
 {
-    FILE *in = fopen("inputs/day4.txt", "r");
+    FILE *in = fopen("inputs/24/day4.txt", "r");
 
     char grid[140][142];
     char buffer[142];

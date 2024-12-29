@@ -43,7 +43,7 @@ int wall(int x, int y, char grid[130][132])
 
 void part1(void)
 {
-    FILE *in = fopen("inputs/day6.txt", "r");
+    FILE *in = fopen("inputs/24/day6.txt", "r");
     char grid[130][132];
     for (int i = 0; i < 130; i++)
         for (int j = 0; j < 132; j++)
@@ -91,8 +91,51 @@ void part1(void)
 
 void part2(void)
 {
-    FILE *in = fopen("inputs/day6.txt", "r");
+    FILE *in = fopen("inputs/24/day6.txt", "r");
+    char grid[130][132];
+    for (int i = 0; i < 130; i++)
+        for (int j = 0; j < 132; j++)
+            grid[i][j] = 0;
 
+    int x = 0, y = 0;
+    int up = 1, down = 0, left = 0, right = 0;
+    int ans = 1;
+
+    parse(grid, in, &x, &y);
+
+    int startX = x;
+    int startY = y;
+    
+    while (x >= 0 && x < 130 && y >= 0 && y < 130)
+    {    
+        while (wall(x + right - left, y - up + down, grid))
+        {
+            if (up)
+            {
+                up = 0;
+                right = 1;
+            }
+            else if (right)
+            {
+                right = 0;
+                down = 1;
+            }
+            else if (down)
+            {
+                down = 0;
+                left = 1;
+            }
+            else if (left)
+            {
+                left = 0;
+                up = 1;
+            }
+        }
+        x += right - left;
+        y += down - up;
+    }
+
+    printf("%i\n", ans);
     fclose(in);
 }
 

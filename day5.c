@@ -102,7 +102,7 @@ int fix(int *pages, int len)
 
 void part1(void)
 {
-    FILE *in = fopen("inputs/day5.txt", "r");
+    FILE *in = fopen("inputs/24/day5.txt", "r");
     char buffer[100];
     int ans = 0;
 
@@ -129,7 +129,7 @@ void part1(void)
 
 void part2(void)
 {
-    FILE *in = fopen("inputs/day5.txt", "r");
+    FILE *in = fopen("inputs/24/day5.txt", "r");
     char buffer[100];
     int ans = 0;
 

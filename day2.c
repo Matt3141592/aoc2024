@@ -68,7 +68,7 @@ int *toArray(char *buffer, int *count)
 
 void part1(void)
 {
-    FILE *in = fopen("inputs/day2.txt", "r");
+    FILE *in = fopen("inputs/24/day2.txt", "r");
 
     char buffer[50];
     int ans = 0;
@@ -88,7 +88,7 @@ void part1(void)
 
 void part2(void)
 {
-    FILE *in = fopen("inputs/day2.txt", "r");
+    FILE *in = fopen("inputs/24/day2.txt", "r");
 
     char buffer[50];
     int ans = 0;
